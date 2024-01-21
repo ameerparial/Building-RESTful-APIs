@@ -1,10 +1,9 @@
 import express from 'express';
+import myroute from './src/routes/homeroute';
 const app = express();
 const PORT = 3000;
 
-app.get('/', (req, res)=>{
-    res.send('Home page');
-});
+myroute(app);
 
 app.listen(PORT, ()=>{
     console.log('Server is listening at the port 3000');
