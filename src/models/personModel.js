@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-const schema = new Schema({
+const PersonSchema = new Schema({
     firstName:{
         type: String,
         required: "First name is required."
@@ -21,4 +21,4 @@ const schema = new Schema({
 
 });
 
-export default schema;
+export default PersonSchema;
