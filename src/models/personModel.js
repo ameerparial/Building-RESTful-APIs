@@ -17,7 +17,7 @@ const PersonSchema = new Schema({
     created_on:{
         type:Date,
         default : Date.now
-    },
+    }
 
 });
 
