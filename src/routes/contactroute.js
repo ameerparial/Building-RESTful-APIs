@@ -1,15 +1,11 @@
-import {addNewPerson} from "../controller/personController";
+import {addNewPerson, getPerson, getPersons} from "../controller/personController";
 
 const route = (app)=>{
     app.route('/contact')
-    .get((req, res)=>{
-        res.send('You are at contact page.');
-    })
+    .get(getPersons)
     .post(addNewPerson);
 
-    app.get('/contact/:cid', (req, res)=>{
-        res.send(req.params);
-    });
+    app.get('/contact/:_id', getPerson)
 }
 
 export default route;
