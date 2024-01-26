@@ -34,6 +34,14 @@ export const getPerson = (req, res)=>{
     // res.send(req.params._id);
 }
 
+export const updatePerson = (req, res)=>{
+    Person.findOneAndUpdate({_id:req.params._id}, req.body, {new:true}).then((result)=>{
+        res.json(result);
+    }).catch((err)=>{
+        res.send(err);
+    });
+
+}
 
 
 
