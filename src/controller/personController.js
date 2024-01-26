@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import PersonSchema from "../models/personModel";
 
 
-const Person = mongoose.model('person', PersonSchema);
+const Person = mongoose.model('contact', PersonSchema);
 
 export const addNewPerson = (req, res)=>{
     console.log(req.body);
@@ -25,7 +25,7 @@ export const getPersons = (req, res)=>{
 }
 
 export const getPerson = (req, res)=>{
-    Person.findOne({_id: req.params._id}).then((result)=>{
+    Person.findById(req.params._id).then((result)=>{
         res.json(result);
     }).catch((err)=>{
         res.json(err);
