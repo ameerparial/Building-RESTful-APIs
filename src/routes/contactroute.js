@@ -1,4 +1,4 @@
-import {addNewPerson, getPerson, getPersons} from "../controller/personController";
+import {addNewPerson, getPerson, getPersons, updatePerson} from "../controller/personController";
 
 const route = (app)=>{
     app.route('/contact')
@@ -6,6 +6,9 @@ const route = (app)=>{
     .post(addNewPerson);
 
     app.get('/contact/:_id', getPerson)
+    app.route('/contact/:_id')
+    .get(getPerson)
+    .put(updatePerson)
 }
 
 export default route;
