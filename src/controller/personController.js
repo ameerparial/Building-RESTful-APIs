@@ -43,5 +43,13 @@ export const updatePerson = (req, res)=>{
 
 }
 
+export const deletePerson= (req, res)=>{
+    Person.deleteOne({_id:req.params._id}).then(
+        (result)=>res.send(result)
+    ).catch(
+        (err)=>res.send(err)
+    )
 
+
+}
 
